@@ -17,7 +17,6 @@
 .card__content {
   display: flex;
   justify-content: space-between;
-  align-items: center;
   margin: 12px 0 0;
 }
 
@@ -48,7 +47,7 @@
   }
 
   .card__like-btn {
-    width: 20px;
+    width: 21px;
     height: 18px;
     background-size: cover;
   }
