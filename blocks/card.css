@@ -12,6 +12,12 @@
   border: none;
   background-color: transparent;
   opacity: 0.4;
+  transition: opacity 0.1s;
+}
+
+.card__like-btn:hover {
+  opacity: 1;
+  cursor: pointer;
 }
 
 .card__content {

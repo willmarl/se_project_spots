@@ -48,6 +48,12 @@
   background-color: transparent;
   border: none;
   align-self: flex-start;
+  transition: opacity 0.1s;
+}
+
+.profile__edit-btn:hover {
+  opacity: 1;
+  cursor: pointer;
 }
 
 .profile__add-btn {
@@ -64,6 +70,12 @@
   flex-shrink: 0;
   font-weight: 500;
   line-height: 1;
+  transition: background-color 0.1s;
+}
+
+.profile__add-btn:hover {
+  background-color: #000;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 627px) {
