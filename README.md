@@ -17,3 +17,5 @@ Designed from [Figma board](https://www.figma.com/file/BBNm2bC3lj8QQMHlnqRsga/Sp
 [Link to deployed github page](https://willmarl.github.io/se_project_spots/)
 
 <img src="screenshots/web-display.gif" width="500px" alt="gif demostration of webpage">
+
+[link to video project presenation on google drive](https://drive.google.com/file/d/1EmlpL4j6jjzh76MPmX82tH-jqP1wKD-g/view?usp=sharing)
