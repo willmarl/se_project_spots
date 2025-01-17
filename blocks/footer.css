@@ -1,8 +1,9 @@
 .footer {
+  color: #212121b2;
   display: flex;
   justify-content: center;
-  margin: 0;
   padding: 60px 0;
-  font-weight: 400;
-  line-height: 1;
+}
+.footer__copyright {
+  margin: 0;
 }
