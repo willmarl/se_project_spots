@@ -85,6 +85,11 @@
   width: 156px;
   padding: 18px 0;
   cursor: pointer;
+  transition: opacity 0.1s;
+}
+
+.modal__submit-btn:hover {
+  opacity: 0.8;
 }
 
 @media screen and (max-width: 627px) {
