@@ -1,9 +1,5 @@
 const initialCards = [
   {
-    name: "asdasdas",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/7-photo-by-griffin-wooldridge-from-pexels.jpg",
-  },
-  {
     name: "Val Thorens",
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/1-photo-by-moritz-feldmann-from-pexels.jpg",
   },
@@ -102,11 +98,11 @@ function handleEditFormSubmit(evt) {
 }
 function handleAddCardSubmit(evt) {
   evt.preventDefault();
-  const tempObj = {
+  const initialValues = {
     name: cardNameInput.value,
     link: cardLinkInput.value,
   };
-  const cardElement = getCardElement(tempObj);
+  const cardElement = getCardElement(initialValues);
   cardsList.prepend(cardElement);
   closeModal(cardModal);
 }
