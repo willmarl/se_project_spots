@@ -1,5 +1,9 @@
 const initialCards = [
   {
+    name: "asdasdas",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/7-photo-by-griffin-wooldridge-from-pexels.jpg",
+  },
+  {
     name: "Val Thorens",
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/1-photo-by-moritz-feldmann-from-pexels.jpg",
   },
@@ -46,6 +50,12 @@ const cardCloseBtn = cardModal.querySelector(".modal__close-btn");
 const cardLinkInput = cardModal.querySelector("#add-card-link-input");
 const cardNameInput = cardModal.querySelector("#add-card-name-input");
 
+//preview modal
+const previewModal = document.querySelector("#preview-modal");
+const previewImageElement = previewModal.querySelector(".modal__image");
+const previewCaptionElement = previewModal.querySelector(".modal__caption");
+const previewCloseBtn = previewModal.querySelector(".modal__close-btn");
+
 //card posts render
 const cardTemplate = document.querySelector("#card-template");
 const cardsList = document.querySelector(".cards__list");
@@ -68,6 +78,12 @@ function getCardElement(data) {
   });
   cardDeleteBtn.addEventListener("click", () => {
     cardElement.remove();
+  });
+  cardImageElement.addEventListener("click", () => {
+    openModal(previewModal);
+    previewImageElement.src = data.link;
+    previewImageElement.alt = data.link;
+    previewCaptionElement.textContent = data.name;
   });
   return cardElement;
 }
@@ -112,6 +128,10 @@ cardCloseBtn.addEventListener("click", () => {
   closeModal(cardModal);
 });
 cardModalElement.addEventListener("submit", handleAddCardSubmit);
+
+previewCloseBtn.addEventListener("click", () => {
+  closeModal(previewModal);
+});
 
 initialCards.forEach((item) => {
   const cardElement = getCardElement(item);
