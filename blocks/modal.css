@@ -35,6 +35,8 @@
   padding: 0;
   position: relative;
   background-color: transparent;
+  width: auto;
+  max-width: 80vw;
 }
 
 .modal__close-btn {
@@ -62,6 +64,9 @@
   opacity: 1;
   right: -52.5px;
   top: 0px;
+}
+.modal__close-btn_preview:hover {
+  opacity: 0.4;
 }
 
 .modal__title {
@@ -117,10 +122,11 @@
   max-width: 80vw;
   max-height: 80vh;
   border-radius: 8px;
+  display: block;
 }
 
 .modal__caption {
-  margin: 0;
+  margin: 8px 0 0;
   color: #fff;
   font-size: 20px;
   line-height: 1.2;
@@ -153,5 +159,9 @@
 
   .modal__submit-btn {
     width: 100%;
+  }
+
+  .modal__close-btn_preview {
+    top: -36px;
   }
 }
