@@ -40,7 +40,7 @@ const editModalDescriptionInput = editModal.querySelector(
 
 //new post card modal
 const cardModal = document.querySelector("#add-card-modal");
-const cardModalElement = cardModal.querySelector(".modal__form");
+const cardFormElement = cardModal.querySelector(".modal__form");
 const cardModalBtn = document.querySelector(".profile__add-btn");
 const cardCloseBtn = cardModal.querySelector(".modal__close-btn");
 const cardLinkInput = cardModal.querySelector("#add-card-link-input");
@@ -55,6 +55,8 @@ const previewCloseBtn = previewModal.querySelector(".modal__close-btn");
 //card posts render
 const cardTemplate = document.querySelector("#card-template");
 const cardsList = document.querySelector(".cards__list");
+
+const closeButtons = document.querySelectorAll(".modal__close-btn");
 
 function getCardElement(data) {
   const cardElement = cardTemplate.content
@@ -105,6 +107,7 @@ function handleAddCardSubmit(evt) {
   const cardElement = getCardElement(initialValues);
   cardsList.prepend(cardElement);
   closeModal(cardModal);
+  evt.target.reset();
 }
 profileEditModalBtn.addEventListener("click", () => {
   editModalNameInput.value = profileName.textContent;
@@ -112,21 +115,17 @@ profileEditModalBtn.addEventListener("click", () => {
   openModal(editModal);
 });
 
-editModalCloseBtn.addEventListener("click", () => {
-  closeModal(editModal);
-});
 editFormElement.addEventListener("submit", handleEditFormSubmit);
 
 cardModalBtn.addEventListener("click", () => {
   openModal(cardModal);
 });
-cardCloseBtn.addEventListener("click", () => {
-  closeModal(cardModal);
-});
-cardModalElement.addEventListener("submit", handleAddCardSubmit);
 
-previewCloseBtn.addEventListener("click", () => {
-  closeModal(previewModal);
+cardFormElement.addEventListener("submit", handleAddCardSubmit);
+
+closeButtons.forEach((button) => {
+  const popup = button.closest(".modal");
+  button.addEventListener("click", () => closeModal(popup));
 });
 
 initialCards.forEach((item) => {
