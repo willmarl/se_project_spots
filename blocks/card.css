@@ -21,6 +21,7 @@
 }
 .card__delete-btn:hover {
   background-image: url("../images/delete-icon-hover.svg");
+  cursor: pointer;
 }
 .card__content {
   display: flex;
@@ -46,6 +47,7 @@
 .card__like-btn_liked {
   background-image: url("../images/liked-icon.svg");
   opacity: 1;
+  background-repeat: no-repeat;
 }
 
 .card__like-btn_liked:hover {
