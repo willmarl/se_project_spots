@@ -157,6 +157,10 @@
     top: 12px;
     right: 12px;
   }
+  .modal__close-btn_preview {
+    top: -40px;
+    right: 0;
+  }
   .modal__label {
     margin-bottom: 24px;
   }
