@@ -109,7 +109,7 @@ function handleAddCardSubmit(evt) {
   cardsList.prepend(cardElement);
   closeModal(cardModal);
   evt.target.reset();
-  disabledButton(cardSubmitBtn);
+  disabledButton(cardSubmitBtn, settings);
 }
 profileEditModalBtn.addEventListener("click", () => {
   editModalNameInput.value = profileName.textContent;
