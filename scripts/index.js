@@ -58,6 +58,7 @@ const cardTemplate = document.querySelector("#card-template");
 const cardsList = document.querySelector(".cards__list");
 
 const closeButtons = document.querySelectorAll(".modal__close-btn");
+const allModals = document.querySelectorAll(".modal");
 
 function getCardElement(data) {
   const cardElement = cardTemplate.content
@@ -87,11 +88,29 @@ function getCardElement(data) {
   return cardElement;
 }
 
+function handleEscapeKey(evt) {
+  const currentModal = document.querySelector(".modal_opened");
+  if (evt.key === "Escape") {
+    closeModal(currentModal);
+  }
+}
+
+function handleModalClick(evt) {
+  const currentModal = document.querySelector(".modal_opened");
+  if (evt.target === currentModal) {
+    closeModal(currentModal);
+  }
+}
+
 function openModal(modal) {
   modal.classList.add("modal_opened");
+  document.addEventListener("keydown", handleEscapeKey);
+  document.addEventListener("click", handleModalClick);
 }
 function closeModal(modal) {
   modal.classList.remove("modal_opened");
+  document.removeEventListener("keydown", handleEscapeKey);
+  document.removeEventListener("click", handleModalClick);
 }
 function handleEditFormSubmit(evt) {
   evt.preventDefault();
